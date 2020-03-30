@@ -9,7 +9,7 @@ def letter_count(string)
   hash = {}
 
   string.chars.each do |letter|
-    (hash.keys.include? letter) ? hash[letter] += 1 : hash[letter] = 1
+    (hash[letter].nil?) ? hash[letter] = 1 : hash[letter] += 1
   end
 
   return hash

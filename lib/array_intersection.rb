@@ -1,14 +1,16 @@
 # Time: O(n) + O(n)
 # Space: O(n)
 
+require 'pry'
+
 def intersection(list1, list2)
   hash = {}
   intersect = []
 
-  list1.each {|list| hash[list] = list2}
+  list1.each {|x| hash[x] = true} 
 
-  hash.each do |list1_num, list2|
-    intersect << list1_num if list2.include? list1_num
+  list2.each do |y| 
+    intersect << y if !hash[y].nil? 
   end
 
   return intersect

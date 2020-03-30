@@ -6,7 +6,7 @@ def palindrome_permutation?(string)
   odd_count = 0
 
   string.chars.each do |letter|
-    (hash.keys.include? letter) ? hash[letter] += 1 : hash[letter] = 1
+    (hash[letter].nil?) ? hash[letter] = 1 : hash[letter] += 1
   end
 
   hash.each do |letter, count|
